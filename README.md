@@ -2,6 +2,11 @@
 
 ## How to Run
 
+To install dependencies (note this program was made in Python 3.7.3)
+```
+pip install -r requirements.txt
+```
+
 To compute the homology of 3-dimensional Lens Spaces:
 ```
 python main.py lens <number of tetrahedrons>

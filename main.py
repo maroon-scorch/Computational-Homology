@@ -71,7 +71,7 @@ def find_elementary_divisors(matrix, rank):
     
     return elementary_divisors
 
-def compute_homology(complex):
+def compute_simplicial_homology(complex):
     complex.append([])
     rank = find_f_vector(complex)
     
@@ -188,7 +188,7 @@ if __name__ == "__main__":
     print("Dimension of Complex: ", dimension)
     print("F-vector: ", f_vector)
     
-    homology = compute_homology(input)
+    homology = compute_simplicial_homology(input)
     pretty_print(homology)
     
     # generate_lens_space(100)
