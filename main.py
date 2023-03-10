@@ -31,7 +31,7 @@ def find_f_vector(complex):
 
 def boundary_map(prev, next):
     """ Given C_n(X) and C_{n-1}(X) - represented as
-    prev and next, finds the boundary map between the chain complexes. """
+    prev and next, finds the boundary map between the chain complexes, """
     # Chain Complex is 0
     if prev == []:
         # In this case the boundary map is the zero map, which we represent as 0
@@ -75,6 +75,14 @@ def compute_simplicial_homology(complex):
     complex.append([])
     rank = find_f_vector(complex)
     
+    boundary_maps = []
+    for i in range(0, len(complex) - 1):
+        if i > 0:
+            print("The " + str(i) + "-th Boundary Map: ")
+            A = boundary_map(complex[i], complex[i-1])
+            boundary_maps.append(A)
+            print("-------------------------------------")
+    
     homology = []
     for i in range(0, len(complex) - 1):
         if i == 0:
@@ -114,7 +122,7 @@ def pretty_print(homology):
             if d != 1 and d != -1:
                 text = text + " X Z/" + str(d) + "Z"
         print(text)
-    print("For all i greater than " + str(len(homology)) + ", H_i(X) is 0.")
+    print("For all i greater than or equal to " + str(len(homology)) + ", H_i(X) is 0.")
     print("----------------------------------------------------")
 
 # For the specific delta complex, please see Hatcher 2.1.8
