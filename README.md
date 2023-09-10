@@ -1,5 +1,7 @@
 # Computational-Homology
 
+For an explanation of the theory behind this calculator, please see [main.pdf](main.pdf).
+
 ## How to Run
 
 To install dependencies (note this program was made in Python 3.7.3)
